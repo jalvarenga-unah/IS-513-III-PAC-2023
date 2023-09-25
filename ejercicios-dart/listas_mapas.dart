@@ -13,21 +13,30 @@ void main() {
 //     'nombre':'' //no se puede repetir claves
   };
 
+  //podemos agregar mas propiedades al Map
+  mascota['apodo'] = "Apolito";
+
+  //obtiene todas las entradas del obejto
+  print(mascota.entries);
+
+  //obtiene las llaves del objeto
+  print(mascota.keys);
+
   print(mascota['nombre']);
   print(mascota['raza']);
-  print(mascota[2]);
+  print(mascota[2]); //null
 
   //listas
   final List<String> colores = ['azul', 'rojo', 'verde'];
 
-  print(colores);
+//   print(colores);
 
   colores.add('morado');
   colores.removeAt(0);
   colores.add('amarillo');
 
-  print(colores);
-  print(colores.length);
+//   print(colores);
+//   print(colores.length);
 
-  print(colores[1]);
+//   print(colores[1]);
 }
