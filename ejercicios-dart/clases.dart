@@ -1,11 +1,15 @@
 void main() {
   //instanciar la clase, no requiere "new"
   final batman = Heroe('Batman', 'El dinero');
-  batman._ciudad = 'Gotica';
+//   batman._ciudad = 'Gotica'; // No es válido
+
+  // uso del setter como "propiedad"
+//   batman.ciudad = 'Gotica';
 
   print(batman.nombre);
   print(batman.poder);
-  print(batman._ciudad);
+  // es la ejecución de un método
+  print(batman.ciudad);
 }
 
 class Heroe {
@@ -14,7 +18,7 @@ class Heroe {
   final String poder;
 
   //propieades privadas inician con "_"
-  String _ciudad = 'Gotham';
+  String _ciudad = 'No definido';
 
   //constructor
   Heroe(this.nombre, this.poder);
@@ -27,4 +31,14 @@ class Heroe {
 //   }
 
   //comportamientos
+
+  //getter
+//   String getCiudad() => this._ciudad;
+  String get ciudad => this._ciudad;
+
+  //setter
+//   void setCiudad(String valor)
+//     => this._ciudad = valor;
+
+  set ciudad(String valor) => this._ciudad = valor;
 }
