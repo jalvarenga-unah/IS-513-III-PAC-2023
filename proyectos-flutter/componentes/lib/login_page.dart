@@ -6,8 +6,17 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text('Login Page'),
+      appBar: AppBar(
+        title: const Text('Login Page'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () {
+              // Navigator.pop(context); // Cierra la ultima ruta desplegada
+
+              Navigator.pushReplacementNamed(context, '/home');
+            },
+            child: Text('Volver')),
       ),
     );
   }
