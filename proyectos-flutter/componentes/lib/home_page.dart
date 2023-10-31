@@ -1,3 +1,4 @@
+import 'package:componentes/my_routes.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -19,7 +20,10 @@ class HomePage extends StatelessWidget {
                 // envía el widget a el inciio del stack de pantallas
 
                 // *  Navigator.of(context).pushNamed('/login');
-                Navigator.pushNamed(context, '/login');
+                Navigator.pushNamed(
+                  context,
+                  Routes.login.name,
+                );
 
                 // ? Hacer push y borrar la pantalla anterior
                 // Navigator.of(context).pushReplacementNamed( '/login');
@@ -28,7 +32,12 @@ class HomePage extends StatelessWidget {
               child: Text('Login'),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  Routes.images.name,
+                );
+              },
               child: Text('Imagenes'),
             ),
             OutlinedButton(

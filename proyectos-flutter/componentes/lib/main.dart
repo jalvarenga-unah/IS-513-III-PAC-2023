@@ -1,5 +1,4 @@
-import 'package:componentes/home_page.dart';
-import 'package:componentes/login_page.dart';
+import 'package:componentes/my_routes.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -17,10 +16,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       // home: const HomePage(),
-      initialRoute: '/home',
-      routes: {
-        '/home': (context) => const HomePage(),
-        '/login': (context) => LoginPage()
+      initialRoute: Routes.home.name,
+      routes: MyRoutes.routes,
+      onGenerateRoute: (RouteSettings settings) {
+        return MaterialPageRoute(
+          builder: (BuildContext context) => Scaffold(
+            appBar: AppBar(),
+            body: Center(child: Text('La ruta ${settings.name} no existe')),
+          ),
+        );
       },
     );
   }
