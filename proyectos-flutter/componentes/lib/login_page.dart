@@ -28,27 +28,12 @@ class LoginPage extends StatelessWidget {
                 icon: Icons.email,
               ),
               const SizedBox(height: 20),
-
               CustomInput(
                 controller: _passwordController,
                 hintText: 'Ingrese su contraseña',
                 icon: Icons.lock,
                 obscure: true,
               ),
-
-              // TextField(
-              //   controller: _passwordController,
-              //   keyboardType: TextInputType.visiblePassword,
-              //   obscureText: true,
-              //   decoration: InputDecoration(
-              //     hintText: 'Ingrese su contraseña',
-              //     prefixIcon: const Icon(Icons.lock),
-              //     suffixIcon: const Icon(Icons.visibility),
-              //     border: OutlineInputBorder(
-              //       borderRadius: BorderRadius.circular(20),
-              //     ),
-              //   ),
-              // ),
               const SizedBox(height: 20),
               Row(
                 children: [
@@ -64,7 +49,24 @@ class LoginPage extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //mandar los datos al servicio de autenticacion
+                    if (_emailController.text.isEmpty) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          action: SnackBarAction(
+                            label: 'Acción',
+                            onPressed: () {},
+                          ),
+                          showCloseIcon: true,
+                          duration: const Duration(seconds: 5),
+                          content: const Text('El correo es obligatorio'),
+                        ),
+                      );
+
+                      return;
+                    }
+                  },
                   child: const Text('Iniciar sesión'),
                 ),
               ),
