@@ -16,27 +16,21 @@ class ListasPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Listas'),
       ),
-      body: ListView(
-        children: [
-          ListTile(
-            title: Text(postres[0]),
+      body: ListView.separated(
+        separatorBuilder: (BuildContext context, int index) => const Divider(
+          indent: 20,
+          endIndent: 20,
+        ),
+        itemCount: postres.length,
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            title: Text(postres[index]),
             subtitle: Text('Subtitulo'),
             leading: Icon(Icons.ac_unit),
             trailing: Icon(Icons.keyboard_arrow_right),
-          ),
-          ListTile(
-            title: Text(postres[1]),
-            subtitle: Text('Subtitulo'),
-            leading: Icon(Icons.ac_unit),
-            trailing: Icon(Icons.keyboard_arrow_right),
-          ),
-          ListTile(
-            title: Text(postres[2]),
-            subtitle: Text('Subtitulo'),
-            leading: Icon(Icons.ac_unit),
-            trailing: Icon(Icons.keyboard_arrow_right),
-          )
-        ],
+            onTap: () {},
+          );
+        },
       ),
     );
   }
