@@ -41,7 +41,10 @@ class HomePage extends StatelessWidget {
               child: Text('Imagenes'),
             ),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: () => Navigator.pushNamed(
+                context,
+                Routes.listas.name,
+              ),
               child: Text('Listas'),
             ),
             // IconButton(onPressed: () {}, icon: Icon(Icons.add)),
