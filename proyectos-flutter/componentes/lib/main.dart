@@ -1,4 +1,4 @@
-import 'package:componentes/my_routes.dart';
+import 'package:componentes/src/router/my_routes.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

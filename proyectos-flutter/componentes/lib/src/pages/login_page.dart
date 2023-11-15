@@ -1,4 +1,4 @@
-import 'package:componentes/custom_input.dart';
+import 'package:componentes/src/widgets/custom_input.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {

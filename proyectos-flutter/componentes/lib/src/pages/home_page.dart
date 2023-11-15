@@ -1,4 +1,4 @@
-import 'package:componentes/my_routes.dart';
+import 'package:componentes/src/router/my_routes.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -46,6 +46,13 @@ class HomePage extends StatelessWidget {
                 Routes.listas.name,
               ),
               child: Text('Listas'),
+            ),
+            OutlinedButton(
+              onPressed: () => Navigator.pushNamed(
+                context,
+                Routes.peticiones.name,
+              ),
+              child: Text('Peticiones http'),
             ),
             // IconButton(onPressed: () {}, icon: Icon(Icons.add)),
           ],
