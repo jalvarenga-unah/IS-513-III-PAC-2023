@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         return MaterialPageRoute(
           builder: (BuildContext context) => Scaffold(
             appBar: AppBar(),
-            body: Center(child: Text('La ruta ${settings.name} no existe')),
+            body: Text('La ruta ${settings.name} no existe'),
           ),
         );
       },

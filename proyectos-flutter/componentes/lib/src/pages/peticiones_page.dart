@@ -9,9 +9,7 @@ class PeticionesPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Peticiones'),
       ),
-      body: Center(
-        child: Text('PeticionesPage'),
-      ),
+      body: Text('PeticionesPage'),
     );
   }
 }
