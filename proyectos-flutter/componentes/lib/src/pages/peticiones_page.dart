@@ -1,15 +1,18 @@
+import 'package:componentes/src/providers/producto.dart';
 import 'package:flutter/material.dart';
 
 class PeticionesPage extends StatelessWidget {
-  const PeticionesPage({super.key});
+  PeticionesPage({super.key});
 
+  final _provider = ProductoProvider();
   @override
   Widget build(BuildContext context) {
+    _provider.getProductos();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Peticiones'),
       ),
-      body: Text('PeticionesPage'),
+      body: Center(child: Text('PeticionesPage')),
     );
   }
 }
