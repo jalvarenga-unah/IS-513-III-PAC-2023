@@ -7,7 +7,8 @@ class PeticionesPage extends StatelessWidget {
   final _provider = ProductoProvider();
   @override
   Widget build(BuildContext context) {
-    _provider.getProductos();
+    final productos = _provider.getProductos();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Peticiones'),
