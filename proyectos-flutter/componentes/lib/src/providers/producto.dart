@@ -13,9 +13,9 @@ class ProductoProvider {
   //   );
 
   //   http.get(url).then((res) {
-  //     if (res.statusCode != 200) {
-  //       throw Exception('Error al obtener los productos');
-  //     }
+  // if (res.statusCode != 200) {
+  //   throw Exception('Error al obtener los productos');
+  // }
 
   //     // convertir el body a un json y luego una lista de Producto
   //     String body = res.body;
@@ -45,22 +45,31 @@ class ProductoProvider {
       path: 'products',
     );
 
-    final res = await http.get(url);
+    try {
+      final res = await http.get(url);
 
-    final String body = res.body;
+      if (res.statusCode != 200) {
+        throw Exception('Error al obtener los productos');
+      }
 
-    final bodyJson = json.decode(body);
+      final String body = res.body; // String
 
-    final productos = List<Producto>.from(
-      //? recorro el json y transformo cada elemento en un "Producto"
-      bodyJson.map((producto) {
-        //? convierto el json en un Producto
-        final Producto newProduct = Producto.fromJson(producto);
+      final bodyJson = json.decode(body);
 
-        return newProduct; // retornando el valor
-      }), //? devuelve un Iterable, de Productos
-    );
+      //recorro el json y transformo cada elemento en un "Producto"
+      final productos = List<Producto>.from(
+        //? recorro el json y transformo cada elemento en un "Producto"
+        bodyJson.map((producto) {
+          //? convierto el json en un Producto
+          final Producto newProduct = Producto.fromJson(producto);
 
-    return productos;
+          return newProduct; // retornando el valor
+        }), //? devuelve un Iterable, de Productos
+      );
+
+      return productos;
+    } catch (error) {
+      throw Exception('Error al obtener los productos');
+    }
   }
 }
