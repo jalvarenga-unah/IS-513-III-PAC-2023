@@ -10,6 +10,58 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Material App Bar'),
       ),
+      drawer: Drawer(
+        // width: double.infinity,
+        // backgroundColor: Colors.blue[50],
+        child: ListView(
+          children: [
+            DrawerHeader(
+              // padding: EdgeInsets.zero,
+              decoration: BoxDecoration(
+                color: Colors.blue[100],
+              ),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    backgroundImage: AssetImage('assets/images/logo.jpg'),
+                    radius: 50,
+                  ),
+                  Text(
+                    'Drawer Header',
+                    style: TextStyle(fontSize: 22),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home),
+              trailing: const Icon(Icons.arrow_forward_ios),
+              title: const Text('Login'),
+              onTap: () {
+                Navigator.pop(context); //cierro el drawer
+
+                //navego a la ruta
+                Navigator.pushNamed(
+                  context,
+                  Routes.login.name,
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.image),
+              trailing: Icon(Icons.arrow_forward_ios),
+              title: Text('Imagenes'),
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  Routes.images.name,
+                );
+              },
+            ),
+          ],
+        ),
+      ),
       body: SizedBox(
         width: double.infinity,
         child: Column(
