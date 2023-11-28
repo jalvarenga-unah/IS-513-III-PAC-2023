@@ -1,4 +1,4 @@
-package com.example.componentes
+package hn.edu.unah.componentes
 
 import io.flutter.embedding.android.FlutterActivity
 
